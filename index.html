@@ -25,6 +25,11 @@
     <p>This is for a hyper-specific scenario where you are making a server-side application that you don't want to have a login flow, but it needs the Pages API which needs a User Access Token no matter what. Cool.</p>
     <p>So this serverless, scrappy HTML page will help you generate one, according to the "Get a Long-lived User Access Token" docs outlined <a href="https://developers.facebook.com/docs/pages/access-tokens">here!</a></p>
     <p>Note: this is just one index.html file, so if you prefer to self-host it, feel free! The code in this will automatically adapt. <a href="https://github.com/Denperidge/facebook-long-lived-uat">The repository/source code is here.</a></p>
+    <details>
+        <summary>Read: privacy policy in case you need to set it.</summary>
+        Nothing is saved server-side. In the original way this is hosted, there is no server-side, except for the Facebook API and possibly any GitHub Pages things. 
+        However, I (the person writing/coding this) am not a lawyer, and I don't know if this constitutes as a privacy policy. All I know is that I don't know anything about you or your data.
+    </details>
     <ol>
         <li>In the Facebook dashboard, enable Facebook Login. In that, enable JavaScript SDK login, and add <a href="" id="baseUrl"></a> to the allowed domains.</li>
         <li><p>Set the appid in the query string and refresh the page. Example: <span id="urlWithExampleAppId"></span></p></li>
@@ -36,10 +41,6 @@
         <li>Log in with that button: <div id="loginbutton"></div></li>
         -->
     </ol>
-    
-    
-    
-   
 
     <script>
         let request = `curl -i -X GET "https://graph.facebook.com/oauth/access_token?grant_type=fb_exchange_token&
