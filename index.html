@@ -61,7 +61,8 @@
                     if (response.status === 'connected') {
                         var accessToken = response.authResponse.accessToken;
                         request = request.replace("APP-ID", location.search.substr(1))
-                                        .replace("APP-SECRET", document.getElementById("app-secret").value);
+                                        .replace("APP-SECRET", document.getElementById("app-secret").value)
+                                        .replace("SHORT-LIVED-USER-ACCESS-TOKEN", accessToken);
                         document.getElementById("code").innerText = request;
 
                     } 
