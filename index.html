@@ -31,7 +31,7 @@
         However, I (the person writing/coding this) am not a lawyer, and I don't know if this constitutes as a privacy policy. All I know is that I don't know anything about you or your data.
     </details>
     <ol>
-        <li>In the Facebook dashboard, enable Facebook Login. In that, enable JavaScript SDK login, and add <a href="" id="baseUrl"></a> to the allowed domains.</li>
+        <li>In the Facebook dashboard, enable Facebook Login. In that, enable JavaScript SDK login, and add <a href="" id="domain"></a> to the allowed domains.</li>
         <li><p>Set the appid in the query string and refresh the page. Example: <span id="urlWithExampleAppId"></span></p></li>
         <li>Enter your app secret here: <input type="text" id="app-secret" placeholder="App Secret" /></li>
         <li><button id="loginbutton">Press this button to log in</button></li>
@@ -48,8 +48,9 @@
                         client_secret=APP-SECRET&
                         fb_exchange_token=SHORT-LIVED-USER-ACCESS-TOKEN"`;
         let baseUrl = window.location.origin + window.location.pathname.trimRight("/");
-        document.getElementById("baseUrl").innerText = baseUrl;
-        document.getElementById("baseUrl").href = baseUrl;
+        document.getElementById("domain").innerText = window.location.origin;
+        document.getElementById("domain").href = window.location.origin;
+
         document.getElementById("urlWithExampleAppId").innerText = baseUrl + "?" + "65481541646";  // This is a keysmash
                         
         function getcode() {
