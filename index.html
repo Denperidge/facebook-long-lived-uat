@@ -8,6 +8,7 @@
 </head>
 <body>
     <script>
+        console.log(`Appid: ${location.search.substr(1)}`);
         window.fbAsyncInit = function() {
           FB.init({
             appId            : location.search.substr(1),
