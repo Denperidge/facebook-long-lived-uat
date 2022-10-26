@@ -26,7 +26,7 @@
     <p>So this serverless, scrappy HTML page will help you generate one, according to the "Get a Long-lived User Access Token" docs outlined <a href="https://developers.facebook.com/docs/pages/access-tokens">here!</a></p>
     <p>Note: this is just one index.html file, so if you prefer to self-host it, feel free! The code in this will automatically adapt. <a href="https://github.com/Denperidge/facebook-long-lived-uat">The repository/source code is here.</a></p>
     <ol>
-        <li>In the Facebook dashboard, enable Facebook Login. In that, enable JavaScript SDK login, and add <span id="baseUrl"></span> to the allowed domains.</li>
+        <li>In the Facebook dashboard, enable Facebook Login. In that, enable JavaScript SDK login, and add <a href="" id="baseUrl"></a> to the allowed domains.</li>
         <li><p>Set the appid in the query string and refresh the page. Example: <span id="urlWithExampleAppId"></span></p></li>
         <li>Enter your app secret here: <input type="text" id="app-secret" placeholder="App Secret" /></li>
         <li><button id="loginbutton">Press this button to log in</button></li>
@@ -48,6 +48,7 @@
                         fb_exchange_token=SHORT-LIVED-USER-ACCESS-TOKEN"`;
         let baseUrl = window.location.origin + window.location.pathname.trimRight("/");
         document.getElementById("baseUrl").innerText = baseUrl;
+        document.getElementById("baseUrl").href = baseUrl;
         document.getElementById("urlWithExampleAppId").innerText = baseUrl + "?" + "65481541646";  // This is a keysmash
                         
         function getcode() {
