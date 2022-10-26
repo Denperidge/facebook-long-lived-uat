@@ -23,9 +23,12 @@
     <h1>Facebook Long-lived User Access Token generator</h1>
     <p>Because for some reason this can't be handled exclusively server side without setting up 5 million things</p>
     <ol>
-        <li><p>Set the appid in the query string and refresh. Example: <span id="example"></span></p></li>
+        <li><p>Set the appid in the query string and refresh the page. Example: <span id="example"></span></p></li>
+        <button id="loginbutton"></button>
+        <!--
         <li>Modify the login button as necessary <textarea id="loginbutton"><fb:login-button scope="public_profile,email" onlogin="getcode();"></fb:login-button></textarea></li>
         <li>Log in with that button: <div id="loginbutton"></div></li>
+        -->
     </ol>
     
     <a href="https://developers.facebook.com/docs/pages/access-tokens">Docs (Get a Long-lived User Access Token)</a>
@@ -39,7 +42,6 @@
                         client_secret=APP-SECRET&
                         fb_exchange_token=SHORT-LIVED-USER-ACCESS-TOKEN"`;
         document.getElementById("example").innerText = window.location.origin + window.location.pathname.trimRight("/") + "?" + "app-id";
-        docume
 
                         
         function getcode() {
@@ -56,7 +58,8 @@
                     } 
                 });
             })
-        });
+        };
+        document.getElementById("loginbutton").addEventListener("click", getcode);
 
     </script>
     <code id="code"></code>
